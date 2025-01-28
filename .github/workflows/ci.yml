@@ -39,6 +39,18 @@ jobs:
       # Build the project with the Gradle Wrapper
       - name: Build with Gradle Wrapper
         run: ./gradlew build --info
+
+      - name: Configure Git User
+        run: |
+          git config --global user.email "chettysaikrishna@gmail.com" # Use your email
+          git config --global user.name "Saikrishna" # Use your name
+
+      - name: Push Changes to Repository
+        run: |
+         git add .
+         git commit -m "Automated changes from CI/CD pipeline"
+         git push origin main
+
       
   dependency-submission:
 
